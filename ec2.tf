@@ -1,5 +1,3 @@
-
-
 resource "aws_instance" "ec2_ins" {
 
   instance_type = "t2.micro"
@@ -18,6 +16,12 @@ resource "aws_instance" "ec2_ins" {
     EOF
 }
 
+
+output "lb-dns" {
+  value = aws_lb.external-alb.dns_name
+
+}
+
 /*
 
 output "aws_instance_ip" {
@@ -31,3 +35,4 @@ output "aws_instance_dns" {
 }
 
 */
+
